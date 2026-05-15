@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Identify exactly which leadership terrain you're on right now and the specific next move that gets you higher. Free 3-page worksheet from Jeff Carley, Master Instructor and USAF Leadership Educator.">
+<title>The Climb Map &mdash; Free Leadership Self-Assessment | Jeff Carley</title>
+<link rel="canonical" href="https://jeffcarleyleadership.com/climb-map/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C2B3A;--navy-mid:#2E4259;--gold:#C8973A;--gold-lt:#E8C87A;--gold-pale:#F5EDD8;--cream:#FAF7F2;--white:#fff;--stone:#8C7B6B;--border:rgba(140,123,107,0.2);--text:#1A1A1A;--mid:#4A4A4A;--light:#787878;--font-d:'Playfair Display',Georgia,serif;--font-b:'Source Sans 3',system-ui,sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);color:var(--text);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+/* NAV */
+.lp-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;background:rgba(250,247,242,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;}
+.lp-nav-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;width:100%;}
+.nav-logo{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--navy);}
+.nav-logo span{color:var(--gold);}
+.nav-back{font-size:0.88rem;font-weight:600;color:var(--stone);display:flex;align-items:center;gap:6px;transition:color 0.2s;}
+.nav-back:hover{color:var(--navy);}
+
+/* HERO */
+.hero{padding-top:64px;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 55%,var(--navy) 100%);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 460'%3E%3Cpolygon points='0,460 180,150 360,290 560,70 760,240 960,50 1120,190 1200,120 1200,460' fill='rgba(255,255,255,0.025)'/%3E%3C/svg%3E") no-repeat bottom/cover;pointer-events:none;}
+.hero-inner{max-width:1000px;margin:0 auto;padding:60px 1.5rem 52px;display:grid;grid-template-columns:1fr 360px;gap:3.5rem;align-items:center;position:relative;}
+.eyebrow{display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:12px;}
+.hero-content h1{font-family:var(--font-d);font-size:clamp(2rem,4.5vw,3.1rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero-content h1 em{color:var(--gold-lt);font-style:italic;}
+.hero-content .lead{font-size:1.05rem;color:rgba(255,255,255,0.78);line-height:1.75;margin-bottom:24px;}
+.hero-bullets{margin-bottom:24px;}
+.hero-bullet{display:flex;align-items:flex-start;gap:10px;font-size:0.93rem;color:rgba(255,255,255,0.72);line-height:1.6;padding:4px 0;}
+.hb-icon{color:var(--gold-lt);flex-shrink:0;}
+.proof-row{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.12);}
+.proof-avatars{display:flex;}
+.proof-avatar{width:32px;height:32px;border-radius:50%;background:var(--navy-mid);border:2px solid rgba(200,151,58,0.4);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:var(--gold-lt);margin-right:-8px;}
+.proof-text{font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.4;margin-left:16px;}
+.proof-text strong{color:rgba(255,255,255,0.85);}
+
+/* FORM PANEL */
+.form-panel{background:var(--white);border-radius:12px;padding:28px 28px 24px;box-shadow:0 20px 60px rgba(0,0,0,0.25);}
+.form-panel-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.form-panel h3{font-family:var(--font-d);font-size:1.25rem;color:var(--navy);line-height:1.3;margin-bottom:4px;}
+.form-panel .sub{font-size:0.87rem;color:var(--light);line-height:1.55;}
+.form-divider{height:1px;background:var(--border);margin:16px 0;}
+.form-gets{margin-bottom:18px;}
+.form-get{display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--mid);line-height:1.55;padding:3px 0;}
+.fg-check{color:var(--gold);font-weight:700;flex-shrink:0;}
+.form-group{margin-bottom:12px;}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
+.form-group input{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:7px;font-family:var(--font-b);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.2s;-webkit-appearance:none;}
+.form-group input:focus{outline:none;border-color:var(--navy);}
+.btn-submit{width:100%;padding:14px;background:var(--gold);color:#fff;border:none;border-radius:8px;font-family:var(--font-b);font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-submit:hover{background:#b5842f;}
+.btn-submit:disabled{opacity:0.7;cursor:not-allowed;}
+.form-privacy{font-size:0.75rem;color:var(--light);text-align:center;margin-top:9px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.error-msg{font-size:0.8rem;color:#c0392b;margin-top:6px;display:none;}
+
+/* MOUNTAIN */
+.mtn{display:block;line-height:0;background:linear-gradient(to bottom,#2E4259,transparent);}
+.mtn svg{display:block;width:100%;}
+
+/* INSIDE SECTION */
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem;}
+.inside-section{padding:56px 0 48px;}
+.section-intro{text-align:center;max-width:640px;margin:0 auto 2.5rem;}
+.section-intro h2{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);margin-bottom:0.75rem;}
+.section-intro p{font-size:0.97rem;color:var(--mid);line-height:1.75;}
+.terrain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+.terrain-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.terrain-card-header{padding:14px 18px 12px;}
+.tc-1 .terrain-card-header{background:#E8F0E8;}
+.tc-2 .terrain-card-header{background:#D4E4F7;}
+.tc-3 .terrain-card-header{background:#FFF0D4;}
+.tc-4 .terrain-card-header{background:rgba(200,151,58,0.1);}
+.terrain-emoji{font-size:1.4rem;margin-bottom:5px;display:block;}
+.terrain-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);margin-bottom:2px;}
+.terrain-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.3;}
+.terrain-card-body{padding:12px 18px 14px;background:var(--white);}
+.terrain-card-body p{font-size:0.87rem;color:var(--mid);line-height:1.65;margin-bottom:8px;}
+.terrain-tag{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:10px;}
+.tc-1 .terrain-tag{background:rgba(74,111,73,0.1);color:#4A6F49;}
+.tc-2 .terrain-tag{background:rgba(46,66,89,0.1);color:var(--navy-mid);}
+.tc-3 .terrain-tag{background:rgba(200,151,58,0.12);color:#8B6520;}
+.tc-4 .terrain-tag{background:rgba(200,151,58,0.2);color:var(--gold);}
+
+/* CRED STRIP */
+.cred-strip{background:var(--navy);padding:40px 0;}
+.cred-strip-inner{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.cred-item{text-align:center;}
+.cred-num{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--gold-lt);line-height:1;margin-bottom:4px;}
+.cred-lbl{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.4;}
+.cred-div{width:1px;height:40px;background:rgba(255,255,255,0.12);}
+
+/* SECOND CTA */
+.second-cta{padding:56px 0;}
+.second-cta-inner{background:var(--gold-pale);border:2px solid var(--gold);border-radius:12px;padding:40px 44px;text-align:center;}
+.second-cta-inner h2{font-family:var(--font-d);font-size:1.7rem;color:var(--navy);margin-bottom:10px;}
+.second-cta-inner p{font-size:0.97rem;color:var(--mid);line-height:1.75;max-width:520px;margin:0 auto 24px;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-family:var(--font-b);font-size:1rem;font-weight:700;padding:14px 28px;border-radius:8px;transition:all 0.2s;border:none;cursor:pointer;}
+.btn-gold:hover{background:#b5842f;}
+
+/* ABOUT */
+.about-strip{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 0;}
+.about-inner{display:flex;align-items:center;gap:2.5rem;}
+.about-avatar{width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(200,151,58,0.3);}
+.about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.about-text h4{font-family:var(--font-d);font-size:1.1rem;color:var(--navy);margin-bottom:4px;}
+.about-text p{font-size:0.9rem;color:var(--mid);line-height:1.65;margin:0;}
+.about-creds{display:flex;gap:1.5rem;margin-top:8px;flex-wrap:wrap;}
+.about-cred{font-size:0.78rem;color:var(--stone);font-weight:600;}
+
+/* FOOTER */
+.lp-footer{background:var(--navy);padding:32px 0;}
+.lp-footer-inner{max-width:1000px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.lp-footer .nav-logo{color:#fff;}
+.lp-footer .nav-logo span{color:var(--gold-lt);}
+.lp-footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);}
+.lp-footer-links{display:flex;gap:1.25rem;}
+.lp-footer-links a{font-size:0.82rem;color:rgba(255,255,255,0.5);transition:color 0.2s;}
+.lp-footer-links a:hover{color:var(--gold-lt);}
+
+/* SUCCESS STATE */
+.success-state{text-align:center;padding:20px 0;}
+.success-state h4{font-family:var(--font-d);font-size:1.15rem;color:var(--navy);margin-bottom:8px;}
+.success-state p{font-size:0.9rem;color:var(--mid);line-height:1.65;margin-bottom:16px;}
+.success-icon{font-size:2.5rem;margin-bottom:12px;}
+.btn-coaching{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-weight:700;padding:12px 22px;border-radius:8px;font-size:0.9rem;}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .hero-inner{grid-template-columns:1fr;}
+  .form-panel{order:-1;}
+  .terrain-grid{grid-template-columns:1fr;}
+  .second-cta-inner{padding:28px 20px;}
+  .about-inner{flex-direction:column;text-align:center;}
+  .about-creds{justify-content:center;}
+  .cred-div{display:none;}
+}
+@media(max-width:480px){
+  .hero-inner{padding:40px 1.25rem 36px;}
+  .wrap{padding:0 1.25rem;}
+  .lp-footer-inner{flex-direction:column;text-align:center;}
+  .lp-footer-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav class="lp-nav">
+  <div class="lp-nav-inner">
+    <a href="https://jeffcarleyleadership.com" class="nav-logo">Jeff <span>Carley</span></a>
+    <a href="https://jeffcarleyleadership.com/#resources" class="nav-back">&#8592; All Free Resources</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="eyebrow">Free 3-Page Worksheet &middot; Leadership Self-Assessment</span>
+      <h1>The <em>Climb Map</em>:<br>Find Out Exactly Where You&#8217;re Stuck</h1>
+      <p class="lead">Most leaders know something is off. They just can&#8217;t name it precisely enough to fix it. The Climb Map does that for you &#8212; in 15 minutes, on paper, with a specific next move at the end.</p>
+      <div class="hero-bullets">
+        <div class="hero-bullet"><span class="hb-icon">&#9968;</span>Four leadership terrains &#8212; find which one you&#8217;re actually on right now</div>
+        <div class="hero-bullet"><span class="hb-icon">&#127919;</span>Scoring scales, reflection prompts, and write-in space on every terrain</div>
+        <div class="hero-bullet"><span class="hb-icon">&#128204;</span>Ends with a commitment section: one action, one owner, one date</div>
+        <div class="hero-bullet"><span class="hb-icon">&#128736;</span>Adapted from material taught at Airman Leadership School, Ellsworth AFB</div>
+      </div>
+      <div class="proof-row">
+        <div class="proof-avatars">
+          <div class="proof-avatar">JC</div>
+          <div class="proof-avatar">AF</div>
+          <div class="proof-avatar">LD</div>
+        </div>
+        <div class="proof-text"><strong>Free access.</strong> Enter your name and email &#8212; the worksheet downloads instantly.</div>
+      </div>
+    </div>
+
+    <div class="form-panel" id="form-panel">
+      <div class="form-panel-eyebrow">Free Worksheet &#8212; Instant Access</div>
+      <h3>Get Your Climb Map</h3>
+      <p class="sub">Enter your name and email. The PDF opens immediately.</p>
+      <div class="form-divider"></div>
+      <div class="form-gets">
+        <div class="form-get"><span class="fg-check">&#10003;</span>The complete 3-page Climb Map worksheet (PDF)</div>
+        <div class="form-get"><span class="fg-check">&#10003;</span>A short note from Jeff on how to get the most out of it</div>
+        <div class="form-get"><span class="fg-check">&#10003;</span>Weekly leadership insights &#8212; unsubscribe anytime</div>
+      </div>
+      <div id="form-container">
+        <div class="form-group">
+          <label for="cm-first">First Name *</label>
+          <input type="text" id="cm-first" name="first_name" placeholder="Your first name" required autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="cm-email">Email Address *</label>
+          <input type="email" id="cm-email" name="email" placeholder="you@example.com" required autocomplete="email">
+          <div class="error-msg" id="email-error">Please enter a valid email address.</div>
+        </div>
+        <button class="btn-submit" id="submit-btn" type="button" onclick="handleSubmit()">
+          Send Me the Worksheet &#8594;
+        </button>
+      </div>
+      <p class="form-privacy">&#128274; Your info is safe. No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<div class="mtn">
+  <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 50L160 18L320 38L520 8L700 32L880 5L1060 28L1260 10L1440 22V50H0Z" fill="#FAF7F2"/>
+  </svg>
+</div>
+
+<section class="inside-section">
+  <div class="wrap">
+    <div class="section-intro">
+      <span class="eyebrow" style="color:var(--gold);">What&#8217;s Inside</span>
+      <h2>Four Terrains. One Honest Assessment.</h2>
+      <p>Built in the ALS classroom and refined over hundreds of conversations with leaders who were stuck and didn&#8217;t quite know where. The terrain model cuts through the vagueness.</p>
+    </div>
+    <div class="terrain-grid">
+      <div class="terrain-card tc-1">
+        <div class="terrain-card-header">
+          <span class="terrain-emoji">&#127793;</span>
+          <div class="terrain-label">Terrain One</div>
+          <div class="terrain-title">The Foothills &#8212; Early Leadership</div>
+        </div>
+        <div class="terrain-card-body">
+          <p>You have the role but not yet the tools. The skills that got you promoted are suddenly less relevant. You&#8217;re leading by feel.</p>
+          <span class="terrain-tag">New &amp; Developing Leaders</span>
+        </div>
+      </div>
+      <div class="terrain-card tc-2">
+        <div class="terrain-card-header">
+          <span class="terrain-emoji">&#129335;</span>
+          <div class="terrain-label">Terrain Two</div>
+          <div class="terrain-title">The Ridge &#8212; Developing Leader</div>
+        </div>
+        <div class="terrain-card-body">
+          <p>You know what good leadership looks like. Doing it consistently under pressure is still the problem. The craft isn&#8217;t yet automatic.</p>
+          <span class="terrain-tag">Mid-Level Leaders</span>
+        </div>
+      </div>
+      <div class="terrain-card tc-3">
+        <div class="terrain-card-header">
+          <span class="terrain-emoji">&#127956;</span>
+          <div class="terrain-label">Terrain Three</div>
+          <div class="terrain-title">High Altitude &#8212; Advanced Leader</div>
+        </div>
+        <div class="terrain-card-body">
+          <p>You lead well. Your ceiling now is culture, not competence. Nobody&#8217;s telling you what your blind spots are.</p>
+          <span class="terrain-tag">Experienced Leaders</span>
+        </div>
+      </div>
+      <div class="terrain-card tc-4">
+        <div class="terrain-card-header">
+          <span class="terrain-emoji">&#127780;</span>
+          <div class="terrain-label">Terrain Four</div>
+          <div class="terrain-title">Above Treeline &#8212; Senior Leader</div>
+        </div>
+        <div class="terrain-card-body">
+          <p>You&#8217;re leading leaders. The metrics are slow and indirect. The question isn&#8217;t what you&#8217;re building &#8212; it&#8217;s what you&#8217;re building it through.</p>
+          <span class="terrain-tag">Senior &amp; Strategic Leaders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cred-strip">
+  <div class="cred-strip-inner">
+    <div class="cred-item"><div class="cred-num">4,500+</div><div class="cred-lbl">Classroom hours<br>this came from</div></div>
+    <div class="cred-div"></div>
+    <div class="cred-item"><div class="cred-num">#1</div><div class="cred-lbl">USAF PME Instructor<br>3 consecutive years</div></div>
+    <div class="cred-div"></div>
+    <div class="cred-item"><div class="cred-num">Top 4%</div><div class="cred-lbl">Master Instructor<br>certification (CIC 3)</div></div>
+    <div class="cred-div"></div>
+    <div class="cred-item"><div class="cred-num">18+</div><div class="cred-lbl">Years U.S. Air Force<br>service &amp; leadership</div></div>
+  </div>
+</div>
+
+<section class="second-cta">
+  <div class="wrap">
+    <div class="second-cta-inner">
+      <span class="eyebrow" style="color:var(--gold);">Still on the fence?</span>
+      <h2>It&#8217;s Free. It Takes 15 Minutes.<br>It Tells You Your Next Move.</h2>
+      <p>The same self-assessment framework used for four years in the Air Force classroom. Hundreds of NCOs have worked through it. The only thing it costs is honesty.</p>
+      <button class="btn-gold" onclick="document.getElementById('cm-first').focus();document.querySelector('.hero').scrollIntoView({behavior:'smooth'});">Get the Free Worksheet &#8594;</button>
+    </div>
+  </div>
+</section>
+
+<div class="about-strip">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="about-avatar">
+        <img src="https://jeffcarleyleadership.com/wp-content/uploads/2026/05/1776120077282.png" alt="Jeff Carley" loading="lazy">
+      </div>
+      <div class="about-text">
+        <h4>About Jeff Carley</h4>
+        <p>U.S. Air Force veteran, Master Instructor (CIC 3), and three-time #1 USAF PME Instructor. Jeff spent four years teaching at Airman Leadership School, Ellsworth AFB &#8212; 4,500+ classroom hours. He now speaks and coaches nationwide.</p>
+        <div class="about-creds">
+          <span class="about-cred">Master Instructor (CIC 3) &#8212; Top 4%</span>
+          <span class="about-cred">#1 USAF PME Instructor, 2018&#8211;2020</span>
+          <span class="about-cred">M.S. Strategic Leadership, BHSU</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="lp-footer">
+  <div class="lp-footer-inner">
+    <a href="https://jeffcarleyleadership.com" class="nav-logo">Jeff <span>Carley</span></a>
+    <p>&#169; 2026 Jeff Carley. All rights reserved.</p>
+    <div class="lp-footer-links">
+      <a href="https://jeffcarleyleadership.com/#resources">Free Resources</a>
+      <a href="https://jeffcarleyleadership.com/#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit() {
+  var firstName = document.getElementById('cm-first').value.trim();
+  var email = document.getElementById('cm-email').value.trim();
+  var emailError = document.getElementById('email-error');
+  var btn = document.getElementById('submit-btn');
+
+  emailError.style.display = 'none';
+
+  if (!firstName) {
+    document.getElementById('cm-first').focus();
+    return;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailError.style.display = 'block';
+    document.getElementById('cm-email').focus();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Opening your worksheet...';
+
+  // Open PDF immediately
+  window.open('https://jeffcarleyleadership.com/wp-content/uploads/2026/05/jeff-carley-climb-map-self-assessment.pdf', '_blank');
+
+  // Show success state
+  setTimeout(function() {
+    document.getElementById('form-container').innerHTML =
+      '<div class="success-state">' +
+      '<div class="success-icon">&#10003;</div>' +
+      '<h4>You\'re all set, ' + firstName + '!</h4>' +
+      '<p>Your Climb Map just opened in a new tab. Complete it honestly &#8212; then hit reply to Jeff\'s welcome email and tell him what terrain you landed on.</p>' +
+      '<a href="https://jeffcarleyleadership.com/#coaching" class="btn-coaching">Explore Coaching with Jeff &#8594;</a>' +
+      '</div>';
+  }, 600);
+}
+
+// Allow Enter key to submit
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && (e.target.id === 'cm-first' || e.target.id === 'cm-email')) {
+    handleSubmit();
+  }
+});
+</script>
+</body>
+</html>
