@@ -1,9 +1,6 @@
 # Jeff Carley Leadership — Netlify Configuration
-# Deployed at: resources.jeffcarleyleadership.com (or subdomain of your choice)
 
-# ─── CLEAN URL REDIRECTS ───────────────────────────────────────────────
-# These make /climb-map work instead of /pages/climb-map.html
-
+# RESOURCE PAGES
 [[redirects]]
   from = "/climb-map"
   to = "/pages/climb-map.html"
@@ -44,34 +41,20 @@
   to = "/pages/thank-you.html"
   status = 200
 
-# Root redirect to main WordPress site
-[[redirects]]
-  from = "/"
-  to = "https://jeffcarleyleadership.com"
-  status = 301
-  force = false
-
-# ─── SECURITY & PERFORMANCE HEADERS ───────────────────────────────────
-
+# SECURITY HEADERS
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/pages/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/climb-map*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/5-questions*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
