@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Where do you want to start? Book Jeff Carley to speak at your event, or start your own leadership climb with free resources and coaching.">
+<title>Where Do You Want to Start? | Jeff Carley Leadership</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C2B3A;--navy-mid:#2E4259;--gold:#C8973A;--gold-lt:#E8C87A;--gold-pale:#F5EDD8;--cream:#FAF7F2;--white:#fff;--stone:#8C7B6B;--border:rgba(140,123,107,0.2);--mid:#4A4A4A;--font-d:'Playfair Display',Georgia,serif;--font-b:'Source Sans 3',system-ui,sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--navy);color:var(--white);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+.nav{height:64px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding:0 2rem;}
+.nav-inner{max-width:1080px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:#fff;}
+.logo span{color:var(--gold-lt);}
+.nav-home{font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.5);transition:color 0.2s;}
+.nav-home:hover{color:var(--gold-lt);}
+
+/* HERO */
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 500'%3E%3Cpolygon points='0,500 300,200 600,350 900,100 1200,280 1440,150 1440,500' fill='rgba(255,255,255,0.025)'/%3E%3C/svg%3E") no-repeat bottom/cover;pointer-events:none;}
+.eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;}
+.hero h1{font-family:var(--font-d);font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero h1 em{color:var(--gold-lt);font-style:italic;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.75;max-width:520px;margin:0 auto 3rem;}
+
+/* PATHWAY CARDS */
+.pathways{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:860px;width:100%;margin:0 auto;position:relative;z-index:1;}
+.pathway{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:2.5rem 2rem;text-align:left;cursor:pointer;transition:all 0.3s;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.pathway::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.pathway:hover{background:rgba(255,255,255,0.1);border-color:rgba(200,151,58,0.4);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.pathway:hover::before{transform:scaleX(1);}
+.pathway-icon{font-size:2.2rem;margin-bottom:16px;}
+.pathway-for{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:8px;}
+.pathway h2{font-family:var(--font-d);font-size:1.4rem;color:#fff;line-height:1.25;margin-bottom:12px;}
+.pathway p{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:24px;flex:1;}
+.pathway-link{display:inline-flex;align-items:center;gap:8px;font-size:0.92rem;font-weight:700;color:var(--gold-lt);transition:gap 0.2s;}
+.pathway:hover .pathway-link{gap:12px;}
+.pathway-bullets{display:flex;flex-direction:column;gap:7px;margin-bottom:24px;}
+.pathway-bullet{display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.55);}
+.pb-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+
+/* DIVIDER */
+.or-divider{display:flex;align-items:center;justify-content:center;position:relative;}
+.or-text{background:var(--navy);font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.3);padding:0 12px;letter-spacing:0.1em;}
+
+/* FOOTER */
+.gateway-footer{padding:1.5rem 2rem;text-align:center;border-top:1px solid rgba(255,255,255,0.08);}
+.gateway-footer p{font-size:0.82rem;color:rgba(255,255,255,0.3);}
+.gateway-footer a{color:rgba(255,255,255,0.4);transition:color 0.2s;}
+.gateway-footer a:hover{color:var(--gold-lt);}
+
+@media(max-width:680px){
+  .pathways{grid-template-columns:1fr;}
+  .hero h1{font-size:1.9rem;}
+  .pathway{padding:2rem 1.5rem;}
+}
+@media(max-width:400px){
+  .hero{padding:2rem 1.25rem 1.5rem;}
+  .pathways{gap:1rem;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://jeffcarleyleadership.com" class="logo">Jeff <span>Carley</span></a>
+    <a href="https://jeffcarleyleadership.com" class="nav-home">&#8592; Back to Home</a>
+  </div>
+</nav>
+
+<main class="hero">
+  <div class="eyebrow">Welcome &nbsp;&middot;&nbsp; Choose Your Path</div>
+  <h1>Where are you<br><em>starting from</em>?</h1>
+  <p class="hero-sub">The climb looks different depending on where you stand. Two paths &mdash; same destination. Pick the one that fits where you are right now.</p>
+
+  <div class="pathways">
+
+    <a href="https://jeffcarleyleadership.com/speaking" class="pathway">
+      <div class="pathway-icon">&#127908;</div>
+      <div class="pathway-for">For event planners &amp; organizations</div>
+      <h2>Bring Jeff to Your Event</h2>
+      <p>You&#8217;re planning an event, leading an organization, or looking for a keynote that actually moves people. Let&#8217;s talk about what your room needs.</p>
+      <div class="pathway-bullets">
+        <div class="pathway-bullet"><div class="pb-dot"></div>Keynotes, breakouts, half-day workshops</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>Corporate, military, healthcare, and association events</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>Download the speaker one-sheet &amp; sample topics</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>Direct inquiry &mdash; no bureau middleman</div>
+      </div>
+      <span class="pathway-link">See Speaking Options &#8594;</span>
+    </a>
+
+    <a href="https://jeffcarleyleadership.com/leader" class="pathway">
+      <div class="pathway-icon">&#9968;&#65039;</div>
+      <div class="pathway-for">For individual leaders</div>
+      <h2>Start Your Own Climb</h2>
+      <p>You&#8217;re a leader who wants to grow &mdash; personally, not just professionally. Whether you&#8217;re new to leading or twenty years in, the climb doesn&#8217;t end here.</p>
+      <div class="pathway-bullets">
+        <div class="pathway-bullet"><div class="pb-dot"></div>Free self-assessments &mdash; no email required</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>The Climb Map worksheet &mdash; find your terrain</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>1-on-1 coaching &mdash; Discovery Session is free</div>
+        <div class="pathway-bullet"><div class="pb-dot"></div>Weekly leadership insights in your inbox</div>
+      </div>
+      <span class="pathway-link">Start Here &#8594;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="gateway-footer">
+  <p>&#169; 2026 Jeff Carley &nbsp;&middot;&nbsp; <a href="https://jeffcarleyleadership.com">jeffcarleyleadership.com</a> &nbsp;&middot;&nbsp; <a href="https://jeffcarleyleadership.com/privacy-policy/">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
