@@ -1,24 +1,108 @@
-# Jeff Carley Leadership — Site Files
+# Jeff Carley Leadership — Netlify Configuration
 
-## File Structure
-```
-/
-├── index.html          ← HOMEPAGE (jeffcarleyleadership.com)
-├── netlify.toml        ← routing config
-├── README.md           ← this file
-└── pages/
-    ├── climb-map.html      ← /climb-map (email gate)
-    ├── 5-questions.html    ← /5-questions (free resource)
-    └── thank-you.html      ← /thank-you (download confirmation)
-```
+# ─── WORDPRESS MEDIA PASSTHROUGH ───────────────────────────────────────
 
-## IMPORTANT — How to Deploy
-1. DELETE every file currently in this GitHub repo
-2. Upload ALL files from this package (keep folder structure intact)
-3. Netlify auto-deploys — homepage goes live in ~15 seconds
+[[redirects]]
+  from = "/wp-content/uploads/*"
+  to = "https://i0.wp.com/jeffcarleyleadership.com/wp-content/uploads/:splat"
+  status = 200
+  force = true
 
-## Live URLs after deploy
-- jeffcarleyleadership.com → homepage
-- jeffcarleyleadership.com/climb-map → Climb Map gate
-- jeffcarleyleadership.com/5-questions → 5 Questions
-- jeffcarleyleadership.com/thank-you → Download page
+[[redirects]]
+  from = "/wp-content/*"
+  to = "https://jeffcarleyleadership.wordpress.com/wp-content/:splat"
+  status = 200
+  force = true
+
+# ─── GATEWAY + PATHWAY PAGES ───────────────────────────────────────────
+
+[[redirects]]
+  from = "/start"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/start/"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking/"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader"
+  to = "/pages/leader.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader/"
+  to = "/pages/leader.html"
+  status = 200
+
+# ─── RESOURCE PAGES ────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "/climb-map"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map/"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions/"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+# ─── SECURITY HEADERS ──────────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/pages/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
