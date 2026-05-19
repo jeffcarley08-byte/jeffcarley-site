@@ -1,0 +1,106 @@
+# Jeff Carley Leadership — Netlify Configuration
+
+# ─── RESOURCE + PATHWAY PAGES (must come BEFORE wp-content rule) ───────
+
+[[redirects]]
+  from = "/climb-map"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map/"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions/"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/start"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/start/"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking/"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader"
+  to = "/pages/leader.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader/"
+  to = "/pages/leader.html"
+  status = 200
+
+# ─── WORDPRESS MEDIA PASSTHROUGH (after page rules) ────────────────────
+
+[[redirects]]
+  from = "/wp-content/uploads/*"
+  to = "https://i0.wp.com/jeffcarleyleadership.com/wp-content/uploads/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "https://jeffcarleyleadership.wordpress.com/wp-content/:splat"
+  status = 200
+  force = true
+
+# ─── SECURITY HEADERS ──────────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/pages/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
