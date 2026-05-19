@@ -1,0 +1,122 @@
+# Jeff Carley Leadership — Netlify Configuration
+
+# ─── WORDPRESS MEDIA PASSTHROUGH ───────────────────────────────────────
+# Proxies /wp-content/ requests to WordPress.com's Jetpack CDN
+# Your media files live at i0.wp.com — this passes requests through
+
+[[redirects]]
+  from = "/wp-content/uploads/*"
+  to = "https://i0.wp.com/jeffcarleyleadership.com/wp-content/uploads/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "https://jeffcarleyleadership.wordpress.com/wp-content/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/wp-admin"
+  to = "https://wordpress.com/home/jeffcarleyleadership.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "https://wordpress.com/home/jeffcarleyleadership.com"
+  status = 301
+  force = true
+
+# ─── GATEWAY + PATHWAY PAGES ───────────────────────────────────────────
+
+[[redirects]]
+  from = "/start"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/start/"
+  to = "/pages/start.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/speaking/"
+  to = "/pages/speaking.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader"
+  to = "/pages/leader.html"
+  status = 200
+
+[[redirects]]
+  from = "/leader/"
+  to = "/pages/leader.html"
+  status = 200
+
+# ─── RESOURCE PAGES ────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "/climb-map"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map/"
+  to = "/pages/climb-map.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/5-questions/"
+  to = "/pages/5-questions.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet"
+  to = "/pages/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/climb-map-worksheet/"
+  to = "/pages/thank-you.html"
+  status = 200
+
+# ─── SECURITY HEADERS ──────────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/pages/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
